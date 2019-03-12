@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+*.class
+*.zip
+*.jar
+*.war
