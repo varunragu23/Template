@@ -1,0 +1,14 @@
+
+{
+    "code-runner.executorMap": {
+        "javascript": "node",
+        "python": "python",
+        "perl": "perl",
+        "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+        "c": "cd $dir && c++ -g -std=c++11 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "cpp": "cd $dir && c++ -g -std=c++11 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+    },
+    "files.associations": {
+        "iostream": "cpp"
+    }
+}
