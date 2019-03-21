@@ -2,13 +2,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "a",
+            "label": "build",
             "type": "shell",
-            "command": "g++",
-            "args": [
-                "-g",
-                "a.cpp"
-            ],
+            "command": "c++ -g -std=c++11 a.cpp",
             "group": {
                 "kind": "build",
                 "isDefault": true
