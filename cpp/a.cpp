@@ -25,7 +25,10 @@ typedef long long int int64;
 typedef unsigned long long int  uint64;
 using namespace std;
 
-#define watch(x) cout << (#x) << " is " << (x) << endl
+#define watch(x) cerr << (#x) << " is " << (x) << endl
+#define printvii(v) cerr << (#v) << "=";for_each(v.begin(), v.end(), [](PII i) -> void {cerr << "(" << i.first << "," << i.second << "),";}); cerr << endl;
+#define printvi(v) cerr << (#v) << "=";for_each(v.begin(), v.end(), [](int i) -> void {cerr << i << ",";}); cerr << endl;
+
 
 int main(int argc, char const *argv[])
 {
