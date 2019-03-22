@@ -43,10 +43,10 @@ public class Task {
         System.out.println(min);
         System.out.println(max);
         System.out.flush();
+        sc.close();
     }
 
     static boolean isSeq(int cow[]) {
         return cow[0]+1 == cow[1] && cow[1] + 1 == cow [2];
     }
-
 }
