@@ -11,6 +11,7 @@
 #include <iostream>
 #include <iterator>
 #include <limits>
+#include <limits.h>
 #include <list>
 #include <map>
 #include <numeric>
