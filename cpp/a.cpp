@@ -45,6 +45,7 @@ typedef vector<PII> VII;
 typedef vector<VI> VVI;
 typedef map<int, int> MPII;
 typedef set<int> SETI;
+typedef set<string> SETS;
 typedef multiset<int> MSETI;
 typedef long int int32;
 typedef unsigned long int uint32;
