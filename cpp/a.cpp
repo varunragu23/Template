@@ -1,5 +1,4 @@
 #include <assert.h>
-#include <bits/stdc++.h>
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -74,6 +73,9 @@ int main(int argc, char const *argv[]) {
   // use cin and cout from this point onwards.
   int N, M;
 
+  for (int i = 0; i < 5; i++) {
+  }
+  
   cin >> N >> M;
 
   cout << N << " " << M << endl;
