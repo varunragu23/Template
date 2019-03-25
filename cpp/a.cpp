@@ -1,3 +1,4 @@
+#pragma region 
 #include <assert.h>
 #include <math.h>
 #include <stdio.h>
@@ -63,6 +64,7 @@ typedef unsigned long long int uint64;
   cerr << (#v) << "=";                                                   \
   for_each(v.begin(), v.end(), [](int i) -> void { cerr << i << ","; }); \
   cerr << endl;
+#pragma endregion
 
 int main(int argc, char const *argv[]) {
   freopen("task.in", "r", stdin);    // redirects standard input
