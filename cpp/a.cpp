@@ -1,5 +1,6 @@
-#pragma region 
+#pragma region Headers, define, typedef
 #include <assert.h>
+#include <limits.h>
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,7 +13,6 @@
 #include <iostream>
 #include <iterator>
 #include <limits>
-#include <limits.h>
 #include <list>
 #include <map>
 #include <numeric>
@@ -79,7 +79,7 @@ int main(int argc, char const *argv[]) {
 
   for (int i = 0; i < 5; i++) {
   }
-  
+
   cin >> N >> M;
 
   cout << N << " " << M << endl;
