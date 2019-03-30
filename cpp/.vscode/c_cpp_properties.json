@@ -20,7 +20,7 @@
         {
             "name": "Mac",
             "includePath": [
-                "/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include/**",
+                "/Library/Developer/CommandLineTools/usr/lib/clang/**",
                 "/usr/local/include/**",
                 "${workspaceFolder}/**"
             ],
