@@ -53,6 +53,13 @@ typedef unsigned long int uint32;
 typedef long long int int64;
 typedef unsigned long long int uint64;
 
+template<class T> ostream &operator<<(ostream& os, vector<T> V) {
+  os << "["; for (auto vv : V) os << vv << ","; return os << "]";
+}
+template<class L, class R> ostream &operator<<(ostream &os, pair<L,R> P) {
+  return os << "(" << P.st << "," << P.nd << ")";
+}
+
 #define watch(x) cerr << (#x) << " is " << (x) << endl
 #define printvii(v)                                    \
   cerr << (#v) << "=";                                 \
