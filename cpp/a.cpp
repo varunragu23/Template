@@ -74,8 +74,10 @@ template<class L, class R> ostream &operator<<(ostream &os, pair<L,R> P) {
 #pragma endregion
 
 int main(int argc, char const *argv[]) {
+#ifndef ONLINE_JUDGE
   freopen("task.in", "r", stdin);    // redirects standard input
   freopen("task.out", "w", stdout);  // redirects standard output
+#endif
 
   // To speed input/output
   cin.sync_with_stdio(0);

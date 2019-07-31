@@ -66,15 +66,11 @@ typedef vector<string> VS;
   cerr << endl;
 
 int main(int argc, char const *argv[]) {
+#ifndef ONLINE_JUDGE
   freopen("task.in", "r", stdin);    
   freopen("task.out", "w", stdout); 
-
+#endif
   cin.sync_with_stdio(0); cin.tie(0);
 
-  int N, M;
-
-  cin >> N >> M;
-
-  cout << N << " " << M << endl;
   return 0;
 }
