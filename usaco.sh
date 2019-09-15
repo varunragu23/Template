@@ -37,6 +37,8 @@ fi
 
 cd $PROJECT_NAME
 git init
+git add .
+git commit -a -m "v0"
 
 code .
 # -----------------------------------------------------------------
