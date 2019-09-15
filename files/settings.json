@@ -43,5 +43,12 @@
     "io-run.showErrorOutputOnFails": true,
     "io-run.showDiffInOutputPanel": true,
     "io-run.cleanupAfterRun": false,
-    "io-run.timeLimit": 4
+    "io-run.timeLimit": 4,
+    "diffEditor.renderSideBySide": false,
+    "gitlens.advanced.messages": {
+      "suppressCommitHasNoPreviousCommitWarning": true
+    },
+    "git.enableSmartCommit": true,
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
 }
