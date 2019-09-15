@@ -8,6 +8,7 @@
 *.obj
 *.bin
 *.dSYM
+a
 
 # Precompiled Headers
 *.gch
@@ -38,3 +39,4 @@
 *.jar
 *.war
 a
+a.dSYM/
