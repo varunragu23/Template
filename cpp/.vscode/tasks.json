@@ -4,7 +4,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "c++ -g -std=c++11 a.cpp",
+            "command": "c++ -g -DDEBUG -std=c++11 a.cpp -o a",
             "group": {
                 "kind": "build",
                 "isDefault": true
