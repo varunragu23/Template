@@ -4,7 +4,7 @@
 #          Description
 # ------------------------------------------------------------------
 
-VERSION=1.0
+VERSION=2.0
 SUBJECT=Create-CF-Projects
 USAGE="Usage: cf.sh <contestid> <problemid>"
 LANG=cpp
