@@ -20,7 +20,7 @@ else
 fi
 
 echo "working on `pwd`"
-cfp.sh $1 $2
+cf parse
 
 for TASK in $(ls)
 do
@@ -28,10 +28,10 @@ PROJECT_NAME=$TASK
 
 # --- Body --------------------------------------------------------
 #  SCRIPT LOGIC GOES HERE
-echo "Creating $LANG project in $PROJECT_NAME directory"
-
 cp -Rf $HOME/Code/Template/$LANG/* ./$PROJECT_NAME/
+cp -Rf $HOME/Code/Template/$LANG/.vscode ./$PROJECT_NAME/
 mv ./$PROJECT_NAME/task.in ./$PROJECT_NAME/${PROJECT_NAME}.in
+cp ./$PROJECT_NAME/in1.txt ./$PROJECT_NAME/${PROJECT_NAME}.in
 if [ -f "${PROJECT_NAME}/a.cpp" ]; then
   sed -i '' "s/task/${PROJECT_NAME}/g" "$PROJECT_NAME/a.cpp"
 fi
@@ -42,9 +42,9 @@ fi
 cd $PROJECT_NAME
 for f in in*.txt; do cp "$f" "$(echo "$f" | sed s/in/a.0/ | sed s/txt/inp/)"; done
 for f in ans*.txt; do cp "$f" "$(echo "$f" | sed s/ans/a.0/ | sed s/txt/oac/)"; done
-git init
+git init -q
 git add .
-git commit -a -m "v0"
+git commit -a -m "v0" -q
 cd ..
 
 done
