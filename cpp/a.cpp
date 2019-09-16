@@ -8,7 +8,7 @@ TASK: task
 
 using namespace std;
 #ifdef DEBUG
-#include "debug.h"
+#include <debug.h>
 #endif
 
 #define EPS 1e-9
