@@ -1,0 +1,19 @@
+{
+  "username": "VarunR123",
+  "password": "cce718878324adf73f941f7a68581687eaff72bf0e40e0d4c0793333f12e834741a215051a10",
+  "template": [
+    {
+      "alias": "cpp",
+      "lang": "42",
+      "path": "/Users/ragunathd/Code/Template/cpp/a.cpp",
+      "suffix": [
+        "cpp"
+      ],
+      "before_script": "c++ -g -DONLINE_JUDGE a.cpp -o a",
+      "script": "./a",
+      "after_script": "rm ./a"
+    }
+  ],
+  "default": 0,
+  "gen_after_parse": false
+}
