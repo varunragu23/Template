@@ -11,16 +11,15 @@ LANG=cpp
 CONTEST=$1
 PROBLEM=$2
 
+echo "working on `pwd`"
+cf parse $1 $2
+
 if [ -z "$CONTEST" ]
 then
  echo "Using defaults"
 else
-	mkdir $CONTEST;
 	cd $CONTEST;
 fi
-
-echo "working on `pwd`"
-cf parse
 
 for TASK in $(ls)
 do
