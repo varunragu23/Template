@@ -36,6 +36,12 @@ typedef vector<string> VS;
 
 #define deb(x) cerr << #x << " = " << x << endl;
 
+#ifdef DEBUG
+#define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
+#else
+#define debug(...) 42
+#endif
+
 // util functions
 
 #pragma endregion
