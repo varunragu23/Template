@@ -20,6 +20,8 @@ using namespace std;
 #define PB push_back
 #define all(cont) cont.begin(), cont.end()
 #define rall(cont) cont.end(), cont.begin()
+#define x first
+#define y second
 
 const double PI = acos(-1.0);
 typedef long long ll;
