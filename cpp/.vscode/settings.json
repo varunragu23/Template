@@ -4,8 +4,8 @@
         "python": "python",
         "perl": "perl",
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
-        "c": "cd $dir && c++ -g -DDEBUG -std=c++11 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-        "cpp": "cd $dir && c++ -g -DDEBUG -std=c++11 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+        "c": "cd $dir && c++ -g -DDEBUG -DONLINE_JUDGE -std=c++11 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "cpp": "cd $dir && c++ -g -DDEBUG -DONLINE_JUDGE -std=c++11 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
     },
     "io-run.executorMap.darwin": {
         ".cpp": {
@@ -50,5 +50,5 @@
     },
     "git.enableSmartCommit": true,
     "terminal.external.osxExec": "iTerm.app",
-    "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+    "terminal.integrated.fontFamily": "Cascadia Code",
 }
