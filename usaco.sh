@@ -6,7 +6,7 @@
 
 VERSION=1.0
 SUBJECT=Create-USACO-Projects
-USAGE="Usage: usaco.sh cpp|java projectName"
+USAGE="Usage: usaco.sh cpp|java projectName [git]"
 
 # --- Options processing -------------------------------------------
 if [ $# -le 1 ] ; then
@@ -19,6 +19,7 @@ LANG=cpp
 
 LANG=$1
 PROJECT_NAME=$2
+GIT=$3
 
 # --- Body --------------------------------------------------------
 #  SCRIPT LOGIC GOES HERE
@@ -36,9 +37,11 @@ if [ -f "${PROJECT_NAME}/Task.java" ]; then
 fi
 
 cd $PROJECT_NAME
-git init
-git add .
-git commit -a -m "v0"
+if [[ ! -z "$GIT" ]]; then
+	git init
+	git add .
+	git commit -a -m "v0"
+fi
 
 code .
 # -----------------------------------------------------------------
