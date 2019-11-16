@@ -36,6 +36,12 @@ typedef vector<PII> VII;
 typedef vector<VI> VVI;
 typedef vector<string> VS;
 
+#define rep(i, a, b) for(int i = a; i < (b); ++i)
+#define trav(a, x) for(auto& a : x)
+#define sz(x) (int)(x).size()
+typedef pair<int, int> pii;
+typedef vector<int> vi;
+
 #ifdef DEBUG
 #define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
 #else
