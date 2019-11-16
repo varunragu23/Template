@@ -27,7 +27,7 @@ echo "Creating $LANG project in $PROJECT_NAME directory"
 
 rm -rf ./$PROJECT_NAME
 
-cp -Rf $HOME/Code/Template/$LANG ./$PROJECT_NAME
+cp -Rf $HOME/SNIPPETS/Template/$LANG ./$PROJECT_NAME
 mv ./$PROJECT_NAME/task.in ./$PROJECT_NAME/${PROJECT_NAME}.in
 if [ -f "${PROJECT_NAME}/a.cpp" ]; then
   sed -i '' "s/task/${PROJECT_NAME}/g" "$PROJECT_NAME/a.cpp"
