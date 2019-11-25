@@ -4,12 +4,12 @@
         "python": "python",
         "perl": "perl",
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
-        "c": "cd $dir && c++ -g -DDEBUG -DONLINE_JUDGE -std=c++11 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-        "cpp": "cd $dir && c++ -g -DDEBUG -DONLINE_JUDGE -std=c++11 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+        "c": "cd $dir && g++-9 -g -DDEBUG -DONLINE_JUDGE -Wall -Wextra -Wpedantic -Wconversion -std=c++11 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "cpp": "cd $dir && g++-9 -g -DDEBUG -DONLINE_JUDGE -Wall -Wextra -Wpedantic -Wconversion -std=c++11 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
     },
     "io-run.executorMap.darwin": {
         ".cpp": {
-            "compileCmd": "c++ -g -DDEBUG -DONLINE_JUDGE -std=c++11 -Wfatal-errors ${codeFile} -o ${codeFileNoExt}",
+            "compileCmd": "c++-9 -g -DDEBUG -DONLINE_JUDGE -Wall -Wextra -Wpedantic -Wconversion -std=c++11 -Wfatal-errors ${codeFile} -o ${codeFileNoExt}",
             "runCmd": "${dirCodeFileNoExt} <${inputFile} >${outputFile}",
             "cleanupCmd-delete": "rm ${codeFileNoExt}",
             "errorTracer": "lldb"

@@ -3,10 +3,16 @@ ID: varunra2
 LANG: C++
 TASK: task
 */
-#pragma region Headers, define, typedef
 #include<bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp> 
+#include <ext/pb_ds/tree_policy.hpp>
 
 using namespace std;
+using namespace __gnu_pbds; 
+  
+using ordered_set = tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>;
+using ordered_map = tree<int, int, less<int>, rb_tree_tag, tree_order_statistics_node_update>;
+
 #ifdef DEBUG
 #include <debug.h>
 #endif
@@ -50,10 +56,8 @@ typedef vector<int> vi;
 
 // util functions
 
-#pragma endregion
 
-
-int main(int argc, char const *argv[]) {
+int main() {
 #ifndef ONLINE_JUDGE
   freopen("task.in", "r", stdin);    
   freopen("task.out", "w", stdout); 
