@@ -9,7 +9,7 @@
       "suffix": [
         "cpp"
       ],
-      "before_script": "c++ -g -std=c++11 -DDEBUG -DONLINE_JUDGE $%full%$ -o a",
+      "before_script": "g++-9 -g -DDEBUG -DONLINE_JUDGE -Wall -Wextra -Wpedantic -Wconversion -DDEBUG -DONLINE_JUDGE $%full%$ -o a",
       "script": "./a",
       "after_script": "rm ./a"
     }
