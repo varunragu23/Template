@@ -50,3 +50,4 @@ cd ..
 done
 
 code .
+code --add ~/SNIPPETS/Selected
