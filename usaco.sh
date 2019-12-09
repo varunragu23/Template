@@ -35,16 +35,16 @@ case "$OSTYPE" in
 if [ -f "${PROJECT_NAME}/a.cpp" ]; then
   sed -i '' "s/task/${PROJECT_NAME}/g" "$PROJECT_NAME/a.cpp"
 fi
-if [ -f "${PROJECT_NAME}/Task.java" ]; then
-  sed -i '' "s/task/${PROJECT_NAME}/g" "$PROJECT_NAME/Task.java"
+if [ -f "${PROJECT_NAME}/a.java" ]; then
+  sed -i '' "s/task/${PROJECT_NAME}/g" "$PROJECT_NAME/a.java"
 fi
 ;;
 	linux*)  
 if [ -f "${PROJECT_NAME}/a.cpp" ]; then
   sed -i "s/task/${PROJECT_NAME}/g" "$PROJECT_NAME/a.cpp"
 fi
-if [ -f "${PROJECT_NAME}/Task.java" ]; then
-  sed -i "s/task/${PROJECT_NAME}/g" "$PROJECT_NAME/Task.java"
+if [ -f "${PROJECT_NAME}/a.java" ]; then
+  sed -i "s/task/${PROJECT_NAME}/g" "$PROJECT_NAME/a.java"
 fi
 ;;
 	*)        echo "unknown: $OSTYPE" ;;
