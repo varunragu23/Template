@@ -12,7 +12,7 @@ public class a {
 
         Scanner sc = new Scanner(System.in);
 
-	int max = 0;
+        int max = 0;
 
         System.out.println(max);
         System.out.flush();
