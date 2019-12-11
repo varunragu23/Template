@@ -35,6 +35,9 @@ cp ./$PROJECT_NAME/in1.txt ./$PROJECT_NAME/${PROJECT_NAME}.in
 if [ -f "${PROJECT_NAME}/a.cpp" ]; then
   sed -i '' "s/task/${PROJECT_NAME}/g" "$PROJECT_NAME/a.cpp"
 fi
+if [ -f "${PROJECT_NAME}/b.cpp" ]; then
+  sed -i '' "s/task/${PROJECT_NAME}/g" "$PROJECT_NAME/b.cpp"
+fi
 if [ -f "${PROJECT_NAME}/a.java" ]; then
   sed -i '' "s/task/${PROJECT_NAME}/g" "$PROJECT_NAME/a.java"
 fi
