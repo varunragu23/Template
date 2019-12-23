@@ -64,5 +64,5 @@ if [[ ! -z "$GIT" ]]; then
 fi
 
 code .
-code --add ~/SNIPPETS/Selected
+#code --add ~/SNIPPETS/Selected
 # -----------------------------------------------------------------
