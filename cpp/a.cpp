@@ -3,6 +3,11 @@ ID: varunra2
 LANG: C++
 TASK: task
 */
+
+#pragma GCC optimize("Ofast,unroll-loops,no-stack-protector,fast-math")
+#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,tune=native")
+//#pragma comment(linker, "/STACK:200000000")
+
 #include<bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp> 
 #include <ext/pb_ds/tree_policy.hpp>
@@ -29,6 +34,8 @@ using ordered_map = tree<int, int, less<int>, rb_tree_tag, tree_order_statistics
 #define x first
 #define y second
 
+mt19937 rng((unsigned int) chrono::steady_clock::now().time_since_epoch().count());
+
 const double PI = acos(-1.0);
 typedef long long ll;
 typedef long double ld;
@@ -47,6 +54,7 @@ typedef vector<string> VS;
 #define sz(x) (int)(x).size()
 typedef pair<int, int> pii;
 typedef vector<int> vi;
+
 
 #ifdef DEBUG
 #define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
