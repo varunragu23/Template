@@ -3,7 +3,7 @@ ID: varunra2
 LANG: C++
 TASK: task
 */
-
+#undef _GLIBCXX_DEBUG
 #pragma GCC optimize("Ofast,unroll-loops,no-stack-protector,fast-math")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,tune=native")
 //#pragma comment(linker, "/STACK:200000000")
