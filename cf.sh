@@ -27,9 +27,9 @@ PROJECT_NAME=$TASK
 
 # --- Body --------------------------------------------------------
 #  SCRIPT LOGIC GOES HERE
-cp -Rf $HOME/Code/Template/$LANG/* ./$PROJECT_NAME/
-cp -Rf $HOME/Code/Template/$LANG/.vscode ./$PROJECT_NAME/
-cp -Rf $HOME/Code/Template/$LANG/.vscode ./
+cp -Rf $HOME/SNIPPETS/Template/$LANG/* ./$PROJECT_NAME/
+cp -Rf $HOME/SNIPPETS/Template/$LANG/.vscode ./$PROJECT_NAME/
+cp -Rf $HOME/SNIPPETS/Template/$LANG/.vscode ./
 mv ./$PROJECT_NAME/task.in ./$PROJECT_NAME/${PROJECT_NAME}.in
 cp ./$PROJECT_NAME/in1.txt ./$PROJECT_NAME/${PROJECT_NAME}.in
 if [ -f "${PROJECT_NAME}/a.cpp" ]; then
@@ -45,9 +45,9 @@ fi
 cd $PROJECT_NAME
 for f in in*.txt; do cp "$f" "$(echo "$f" | sed s/in/a.0/ | sed s/txt/inp/)"; done
 for f in ans*.txt; do cp "$f" "$(echo "$f" | sed s/ans/a.0/ | sed s/txt/oac/)"; done
-git init -q
-git add .
-git commit -a -m "v0" -q
+#git init -q
+#git add .
+#git commit -a -m "v0" -q
 cd ..
 
 done
