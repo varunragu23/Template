@@ -18,9 +18,6 @@ using namespace __gnu_pbds;
 using ordered_set = tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>;
 using ordered_map = tree<int, int, less<int>, rb_tree_tag, tree_order_statistics_node_update>;
 
-#ifdef DEBUG
-#include <debug.h>
-#endif
 
 #define EPS 1e-9
 #define IN(A, B, C) assert(B <= A && A <= C)
@@ -56,6 +53,9 @@ typedef pair<int, int> pii;
 typedef vector<int> vi;
 
 
+#ifdef DEBUG
+#include <debug.h>
+#endif
 #ifdef DEBUG
 #define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
 #else
