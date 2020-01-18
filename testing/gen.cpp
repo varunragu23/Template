@@ -7,7 +7,7 @@ int rand(int a, int b) {
 }
 
 int main(int argc, char* argv[]) {
-    srand(atoi(argv[1])); // atoi(s) converts an array of chars to int
+    if (argv[1] != NULL) srand(atoi(argv[1])); // atoi(s) converts an array of chars to int
     int n = rand(2, 10);
     printf("%d\n", n);
     set<int> used;
