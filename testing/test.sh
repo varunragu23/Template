@@ -1,7 +1,9 @@
+progName=a
 for((i = 1; ; ++i)); do
-    echo $i
+    echo "==== random test $i ===="
     ./gen $i > int
-    ./a < int > out1
+    # head -1 int
+    time ./$progName < int > out1
     ./brute < int > out2
     diff -w out1 out2 || break
     #diff -w <(./a < int) <(./brute < int) || break

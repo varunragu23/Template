@@ -18,6 +18,25 @@ using namespace __gnu_pbds;
 using ordered_set = tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>;
 using ordered_map = tree<int, int, less<int>, rb_tree_tag, tree_order_statistics_node_update>;
 
+#ifdef DEBUG
+#include <debug.h>
+#define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
+#else
+#define debug(...) 42
+#endif
+
+struct timeit {
+	decltype(chrono::high_resolution_clock::now()) begin;
+	const string _label;
+	timeit(string label = "???") : _label(label) { begin = chrono::high_resolution_clock::now(); }
+	~timeit() {
+		auto end = chrono::high_resolution_clock::now();
+		auto duration = chrono::duration_cast<chrono::milliseconds>(end - begin).count();
+		ostringstream dur;
+		dur << duration << "ms elapsed [" << _label << "]";
+		debug(dur.str());
+	}
+};
 
 #define EPS 1e-9
 #define IN(A, B, C) assert(B <= A && A <= C)
@@ -51,16 +70,6 @@ typedef vector<string> VS;
 #define sz(x) (int)(x).size()
 typedef pair<int, int> pii;
 typedef vector<int> vi;
-
-
-#ifdef DEBUG
-#include <debug.h>
-#endif
-#ifdef DEBUG
-#define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
-#else
-#define debug(...) 42
-#endif
 
 // util functions
 
