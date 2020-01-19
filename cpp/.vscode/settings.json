@@ -9,7 +9,7 @@
   },
   "io-run.executorMap.darwin": {
     ".cpp": {
-      "compileCmd": "c++-9 -g -DDEBUG -DONLINE_JUDGE -Wall -Wextra -Wpedantic -Wconversion -std=c++11 -Wfatal-errors ${codeFile} -o ${codeFileNoExt}",
+      "compileCmd": "c++-9 -g -O2 -DDEBUG -DONLINE_JUDGE -Wall -Wextra -Wpedantic -Wconversion -std=c++11 -Wfatal-errors ${codeFile} -o ${codeFileNoExt}",
       "runCmd": "${dirCodeFileNoExt} <${inputFile} >${outputFile}",
       "cleanupCmd-delete": "rm ${codeFileNoExt}",
       "errorTracer": "lldb"
