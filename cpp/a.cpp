@@ -17,6 +17,11 @@ using namespace __gnu_pbds;
   
 using ordered_set = tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>;
 using ordered_map = tree<int, int, less<int>, rb_tree_tag, tree_order_statistics_node_update>;
+const int RANDOM = chrono::high_resolution_clock::now().time_since_epoch().count();
+struct chash {
+    int operator()(int x) const { return x ^ RANDOM; }
+};
+gp_hash_table<int, int, chash> table;
 
 #ifdef DEBUG
 #include <debug.h>
