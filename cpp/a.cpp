@@ -23,6 +23,8 @@ struct chash {
 };
 gp_hash_table<int, int, chash> table;
 
+mt19937 rng((unsigned int) chrono::steady_clock::now().time_since_epoch().count());
+
 #ifdef DEBUG
 #include <debug.h>
 #define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
@@ -54,8 +56,6 @@ struct timeit {
 #define rall(cont) cont.end(), cont.begin()
 #define x first
 #define y second
-
-mt19937 rng((unsigned int) chrono::steady_clock::now().time_since_epoch().count());
 
 const double PI = acos(-1.0);
 typedef long long ll;
