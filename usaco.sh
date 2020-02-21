@@ -4,6 +4,7 @@
 #          Description
 # ------------------------------------------------------------------
 
+SWAP="Y"
 VERSION=1.0
 SUBJECT=Create-USACO-Projects
 USAGE="Usage: usaco.sh cpp|java projectName [git]"
@@ -56,12 +57,19 @@ fi
 	*)        echo "unknown: $OSTYPE" ;;
 esac
 
+if [[ ! -z "$SWAP" ]]; then
+mv $PROJECT_NAME/a.cpp $PROJECT_NAME/b1.cpp
+mv $PROJECT_NAME/b.cpp $PROJECT_NAME/a.cpp
+mv $PROJECT_NAME/b1.cpp $PROJECT_NAME/b.cpp
+fi
+
 cd $PROJECT_NAME
 if [[ ! -z "$GIT" ]]; then
 	git init
 	git add .
 	git commit -a -m "v0"
 fi
+
 
 code .
 #code --add ~/SNIPPETS/Selected
