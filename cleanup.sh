@@ -1,6 +1,8 @@
 find . -type f -name 'a.out' -delete
 find . -type f -name 'a' -delete
 find . -type f -name 'b' -delete
+find . -type f -name 'gen' -delete
+find . -type f -name 'brute' -delete
 find . -type f -name '*.exe' -delete
 find . -type f -name '*.class' -delete
 find . -type d -name '*.dSYM' | xargs rm -r
