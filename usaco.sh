@@ -4,10 +4,10 @@
 #          Description
 # ------------------------------------------------------------------
 
-SWAP="Y"
+SWAP=""
 VERSION=1.0
 SUBJECT=Create-USACO-Projects
-USAGE="Usage: usaco.sh cpp|java projectName [git]"
+USAGE="Usage: usaco.sh cpp|java projectName [vishal] [git]"
 
 # --- Options processing -------------------------------------------
 if [ $# -le 1 ] ; then
@@ -20,7 +20,8 @@ LANG=cpp
 
 LANG=$1
 PROJECT_NAME=$2
-GIT=$3
+SWAP=$3
+GIT=$4
 
 # --- Body --------------------------------------------------------
 #  SCRIPT LOGIC GOES HERE

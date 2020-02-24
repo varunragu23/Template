@@ -1,10 +1,15 @@
 #!/bin/bash
 SUBJECT="Run a program with inputs and time it"
 USAGE="Usage: ./run.sh <program> <fileprefix>"
+# --- Options processing -------------------------------------------
+if [ $# -le 1 ] ; then
+    echo $USAGE
+    exit 1;
+fi
 
 progName=$1
 fileName=$2
-
+mkdir -p data
 #timer in sec
 timer=2
 #memory in KB
@@ -22,12 +27,12 @@ echo "Running [$progName] against [$fileName] tests"
 fName=$fileName
 for((i = 1; ; ++i)); do
     name=`printf "%02d" $i`
-    if [[ ! -f "$fName.$name.inp" ]] ; then
+    if [[ ! -f "data/$fName.$name.inp" ]] ; then
 	exit 0
     fi 
     echo "==== test $fName.$name ===="
-    head -1 $fName.$name.inp
-    gtime -f "$progName %e sec, %M KB" ./$progName < $fName.$name.inp > $fName.$name.out
-    diff -w $fName.$name.out $fName.$name.oac || break
+    head -1 data/$fName.$name.inp
+    gtime -f "$progName %e sec, %M KB" ./$progName < data/$fName.$name.inp > data/$fName.$name.out
+    diff -w data/$fName.$name.out data/$fName.$name.oac || break
 done
 exit 1
