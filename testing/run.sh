@@ -23,6 +23,10 @@ if [ -z "$fileName" ]
 then
 	fileName=b
 fi
+
+rm -rf data/failed.*
+failed=0
+
 echo "Running [$progName] against [$fileName] tests"
 fName=$fileName
 for((i = 1; ; ++i)); do
@@ -33,6 +37,18 @@ for((i = 1; ; ++i)); do
     echo "==== test $fName.$name ===="
     head -1 data/$fName.$name.inp
     gtime -f "$progName %e sec, %M KB" ./$progName < data/$fName.$name.inp > data/$fName.$name.out
-    diff -w data/$fName.$name.out data/$fName.$name.oac || break
+    diff -w data/$fName.$name.out data/$fName.$name.oac
+    if [ "$?" != "0" ]
+    then
+        ((failed = failed + 1))
+        cp data/$fName.$name.inp data/failed.$i.inp
+        cp data/$fName.$name.oac data/failed.$i.oac
+        cp data/$fName.$name.out data/failed.$i.out
+        # break
+    fi
 done
-exit 1
+if [ "$failed" != "0" ]
+then
+    echo "Failed $failed Tests"
+    exit 1
+fi

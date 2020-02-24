@@ -19,7 +19,8 @@ if [ -z "$progName" ]
 then
 	progName=a
 fi
-
+rm -rf data/failed.*
+failed=0
 for((i = 1; i <= $tCount; ++i)); do
     name=`printf "%02d" $i`
     echo "==== test $name ===="
@@ -27,5 +28,17 @@ for((i = 1; i <= $tCount; ++i)); do
     head -1 data/inp
     gtime -f "brute %e sec, %M KB" ./brute < data/inp > data/oac
     gtime -f "$progName %e sec, %M KB" ./$progName < data/inp > data/out
-    diff -w data/out data/oac || break
+    diff -w data/out data/oac 
+    if [ "$?" != "0" ]
+    then
+        ((failed = failed + 1))
+        cp data/inp data/failed.$i.inp
+        cp data/oac data/failed.$i.oac
+        cp data/out data/failed.$i.out
+    fi
 done
+if [ "$failed" != "0" ]
+then
+    echo "Failed $failed Tests"
+    exit 1
+fi
