@@ -13,6 +13,13 @@ int main(int argc, char* argv[]) {
     vector<pair<int,int>> edges;
     for(int i = 2; i <= n; ++i) {
         edges.emplace_back(rand(1, i - 1), i);
+
+        // star
+	//edges.emplace_back(1, i);
+        // line
+	//edges.emplace_back(i-1, i);
+        // binary tree
+	//edges.emplace_back(i/2, i);
     }
     
     vector<int> perm(n + 1); // re-naming vertices
