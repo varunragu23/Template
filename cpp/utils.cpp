@@ -90,6 +90,7 @@ Modular and divison are slow;
 #pragma GCC target("sse4")
 
 */
-
+// Mustafa
 // MyCompetitiveProgramming/zz-algorthmic-resources/tutorial-links.txt
+// WilliamLin
 // CompetitiveProgramming/Index_of_Cancerous_Codes.md
