@@ -29,3 +29,35 @@ struct timeit {
 		debug(dur.str());
 	}
 };
+
+Fast IO
+
+int in() {
+	char c=getchar_unlocked();
+	while(c<'0'||c>'9')
+		c=getchar_unlocked();
+	int r=0;
+	while(c>='0'&&c<='9') {
+		r=r*10+c-'0';
+		c=getchar_unlocked();
+	}
+	return r;
+}
+
+void out(int x) {
+	int lz=0, r=0;
+	while(x%10==0) {
+		++lz;
+		x/=10;
+	}
+	while(x) {
+		r=r*10+x%10;
+		x/=10;
+	}
+	while(r) {
+		putchar_unlocked('0'+r%10);
+		r/=10;
+	}
+	while(lz--)
+		putchar_unlocked('0');
+}
