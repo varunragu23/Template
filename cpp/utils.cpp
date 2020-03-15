@@ -99,3 +99,72 @@ Erricto
 
 DP states from CSES
 https://codeforces.com/blog/entry/70018#comment-545687
+
+
+// My old implementation of binary search.
+
+// 1) Looking for 'target' in a sorted array.
+int f() {
+    int left = 0, right = n - 1;
+    while(left <= right) {
+        int mid = left + (right - left) / 2;
+        if(a[mid] == target) {
+            return mid;
+        }
+        else if(a[mid] > target) {
+            right = mid - 1;
+        }
+        else {
+            left = mid + 1;
+        }
+    }
+    return -1;
+}
+
+// 2) Looking for the index of the first element that satisfies some property.
+// F F T T T T <- find first index that has TRUE
+int f() {
+    int left = 0, right = n - 1; // add +1 to 'right' if the answer can be outside [left, right]
+    while(left < right) {
+        int mid = left + (right - left) / 2;
+        if(property(mid)) {
+            right = mid;
+        }
+        else {
+            left = mid + 1;
+        }
+    }
+    return left;
+}
+
+// Forward declaration of isBadVersion API.
+bool isBadVersion(int version);
+
+class Solution {
+public:
+    int firstBadVersion(int n) {
+        int left = 1, right = n;
+        int ans = -1; // returned if there is no bad version (impossible in this problem though)
+        while(left <= right) {
+            int mid = left + (right - left) / 2;
+            if(isBadVersion(mid)) {
+                ans = mid;
+                right = mid - 1; // maybe there is even ealier bad version on the left
+            }
+            else {
+                left = mid + 1;
+            }
+        }
+        return ans;
+    }
+};
+
+-ve array index
+const int MAX_N = 2e5 + 20;
+const int ZERO = 1e5 + 5;
+int dp_ [MAX_N];
+
+int& dp (int idx) { // the '&' is very important!
+  return dp_[ZERO + idx];
+}
+
