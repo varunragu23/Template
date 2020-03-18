@@ -190,3 +190,5 @@ https://www.quora.com/What-are-some-optimization-techniques-to-reduce-space-and-
 gp_hash_table
 getchar_unlocked
 
+#pragma GCC optimize("Ofast")
+#pragma GCC target("avx,avx2,fma")
