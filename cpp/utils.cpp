@@ -184,3 +184,9 @@ struct custom_hash {
 };
 unordered_map<long long, int, custom_hash> safe_map;
 gp_hash_table<long long, int, custom_hash> safe_hash_table;
+
+Speed up techniques
+https://www.quora.com/What-are-some-optimization-techniques-to-reduce-space-and-time-complexity-of-DP-solution-used-in-competitive-programming
+gp_hash_table
+getchar_unlocked
+
