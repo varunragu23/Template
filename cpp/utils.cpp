@@ -192,3 +192,11 @@ getchar_unlocked
 
 #pragma GCC optimize("Ofast")
 #pragma GCC target("avx,avx2,fma")
+
+#include <ext/rope> //header with rope
+using namespace std;
+using namespace __gnu_cxx; //namespace with rope and some additional stuff
+rope<int> v;               // use as usual STL container
+rope<int> cur = v.substr(l, r - l + 1);
+v.erase(l, r - l + 1);
+v.insert(v.mutable_begin(), cur);
