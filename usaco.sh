@@ -65,6 +65,8 @@ mv $PROJECT_NAME/b1.cpp $PROJECT_NAME/b.cpp
 fi
 
 cd $PROJECT_NAME
+mkdir lib
+mv b.cpp utils.cpp lib/
 if [[ ! -z "$GIT" ]]; then
 	git init
 	git add .
