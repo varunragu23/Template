@@ -6,7 +6,7 @@ find . -type f -name 'brute' -delete
 find . -type f -name '*.exe' -delete
 find . -type f -name '*.class' -delete
 find . -type d -name '*.dSYM' | xargs rm -r
-find ~/Code/Varun -type d -name '.git' | xargs rm -r
+#find ~/Code/Varun -type d -name '.git' | xargs rm -r
 #find ~/Code/OldVarun -type d -name '.git' | xargs rm -r
 #find ~/Code/OldVarun -type d -name '.vscode' | xargs rm -r
 #find ~/Code/OldVarun -type f -name '.gitignore' | xargs rm -r
