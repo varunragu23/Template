@@ -3,14 +3,14 @@
     "javascript": "node",
     "python": "python",
     "perl": "perl",
-    "c": "cd $dir && g++-9 -g -DDEBUG -Wall -Wextra -Wpedantic -Wconversion -std=c++11 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "cpp": "cd $dir && g++-9 -g -DDEBUG -Wall -Wextra -Wpedantic -Wconversion -std=c++11 -Wshadow -Wformat=2 -Wfloat-equal -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -D_FORTIFY_SOURCE=2 -fsanitize=address -fsanitize=undefined -fno-sanitize-recover -fstack-protector $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "c": "cd $dir && g++-9 -g -DDEBUG -Wall -Wextra -Wpedantic -Wconversion -std=c++11 $fileName -o $fileNameWithoutExt && gtime $dir$fileNameWithoutExt",
+    "cpp": "cd $dir && g++-9 -g -DDEBUG -Wall -Wextra -Wpedantic -Wconversion -std=c++11 -Wshadow -Wformat=2 -Wfloat-equal -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -D_FORTIFY_SOURCE=2 -fsanitize=address -fsanitize=undefined -fno-sanitize-recover -fstack-protector $fileName -o $fileNameWithoutExt && gtime -f '%e sec, %M KB'  $dir$fileNameWithoutExt",
     "java": "cd $dir && javac $fileName && java $fileNameWithoutExt"
   },
   "io-run.executorMap.darwin": {
     ".cpp": {
-      "compileCmd": "c++-9 -g -O2 -DDEBUG -DONLINE_JUDGE -Wall -Wextra -Wpedantic -Wconversion -std=c++11 -Wfatal-errors ${codeFile} -o ${codeFileNoExt}",
-      "runCmd": "${dirCodeFileNoExt} <${inputFile} >${outputFile}",
+      "compileCmd": "c++-9 -g -O2 -DDEBUG -DONLINE_JUDGE -Wall -Wextra -Wpedantic -Wconversion -std=c++11 -Wfatal-errors ${codeFile} -o ${codeFileNoExt} && rm -rf mem.out",
+      "runCmd": "gtime -f '%e sec, %M KB'  ${dirCodeFileNoExt} <${inputFile} >${outputFile} 2>> mem.out",
       "cleanupCmd-delete": "rm ${codeFileNoExt}",
       "errorTracer": "lldb"
     },
@@ -51,3 +51,4 @@
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
 }
+
