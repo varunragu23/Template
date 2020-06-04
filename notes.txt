@@ -3,3 +3,5 @@
         "c": "cd $dir && g++-9 -g -DDEBUG -Wall -Wextra -Wpedantic -Wconversion -std=c++11 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "cpp": "cd $dir && g++-9 -g -DDEBUG -Wall -Wextra -Wpedantic -Wconversion -std=c++11 -Wshadow -Wformat=2 -Wfloat-equal -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -D_FORTIFY_SOURCE=2 -fsanitize=address -fsanitize=undefined -fno-sanitize-recover -fstack-protector $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt"
+
+codesign --entitlements gdb.xml -fs gdb-cert /usr/local/bin/gdb
