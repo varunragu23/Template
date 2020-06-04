@@ -43,6 +43,7 @@ if [ -f "${PROJECT_NAME}/a.java" ]; then
 fi
 cd $PROJECT_NAME
 mkdir lib
+cp $HOME/SNIPPETS/Template/files/debug.h lib/
 mv b.cpp utils.cpp lib/
 for f in in*.txt; do cp "$f" "$(echo "$f" | sed s/in/a.0/ | sed s/txt/inp/)"; done
 for f in ans*.txt; do cp "$f" "$(echo "$f" | sed s/ans/a.0/ | sed s/txt/oac/)"; done
