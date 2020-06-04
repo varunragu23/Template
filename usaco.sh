@@ -66,6 +66,7 @@ fi
 
 cd $PROJECT_NAME
 mkdir lib
+cp $HOME/SNIPPETS/Template/files/debug.h lib/
 mv b.cpp utils.cpp lib/
 if [[ ! -z "$GIT" ]]; then
 	git init

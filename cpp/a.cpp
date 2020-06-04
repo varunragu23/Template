@@ -8,7 +8,7 @@ TASK: task
 using namespace std;
 
 #ifdef DEBUG
-#include <debug.h>
+#include "lib/debug.h"
 #define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
 #else
 #define debug(...) 42
