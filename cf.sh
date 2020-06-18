@@ -11,6 +11,9 @@ LANG=cpp
 CONTEST=$1
 PROBLEM=$2
 
+cf race $CONTEST
+cd cf/contest
+
 echo "working on `pwd`"
 cf parse $1 $2
 
@@ -45,8 +48,8 @@ cd $PROJECT_NAME
 mkdir lib
 cp $HOME/SNIPPETS/Template/files/debug.h lib/
 mv b.cpp utils.cpp lib/
-for f in in*.txt; do cp "$f" "$(echo "$f" | sed s/in/a.0/ | sed s/txt/inp/)"; done
-for f in ans*.txt; do cp "$f" "$(echo "$f" | sed s/ans/a.0/ | sed s/txt/oac/)"; done
+for f in in*.txt; do mv "$f" "$(echo "$f" | sed s/in/a.0/ | sed s/txt/inp/)"; done
+for f in ans*.txt; do mv "$f" "$(echo "$f" | sed s/ans/a.0/ | sed s/txt/oac/)"; done
 #git init -q
 #git add .
 #git commit -a -m "v0" -q
