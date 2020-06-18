@@ -1,6 +1,4 @@
 {
-  "username": "VROOM_VARUN",
-  "password": "b023ecd2d186882bafd2ece54592ea3385d15a79d27d0149a02de68da113aea500dacf93ef94",
   "template": [
     {
       "alias": "cpp",
@@ -9,11 +7,20 @@
       "suffix": [
         "cpp"
       ],
-      "before_script": "g++-9 -g -DDEBUG -DONLINE_JUDGE -Wall -Wextra -Wpedantic -Wconversion -DDEBUG -DONLINE_JUDGE $%full%$ -o a",
+      "before_script": "g++-9 -g -DDEBUG -DONLINE_JUDGE -Wall -Wextra -Wpedantic -Wconversion $%full%$ -o a",
       "script": "./a",
       "after_script": "rm ./a"
     }
   ],
   "default": 0,
-  "gen_after_parse": false
+  "gen_after_parse": false,
+  "host": "https://codeforces.com",
+  "proxy": "",
+  "folder_name": {
+    "acmsguru": "acmsguru",
+    "contest": "contest",
+    "group": "group",
+    "gym": "gym",
+    "root": "cf"
+  }
 }
