@@ -219,3 +219,74 @@ int main() {
 	ull x = 10ULL*M+3;
 	cout << x << " " << F.reduce(x) << "\n"; // 10000000073 3
 }
+
+// util functions
+
+// heap-use-after-free
+int main1(int argc, char **argv) {
+  int *array = new int[100];
+  delete [] array;
+  return array[argc];  // BOOM
+}
+// heap-buffer-overflow
+int main2(int argc, char **argv) {
+  int *array = new int[100];
+  array[0] = 0;
+  int res = array[argc + 100];  // BOOM
+  delete [] array;
+  return res;
+}
+// stack-over-flow
+int main3(int argc, char **argv) {
+  int stack_array[100];
+  stack_array[1] = 0;
+  return stack_array[argc + 100];  // BOOM
+}
+// global-over-flow
+int global_array[100] = {-1};
+int main4(int argc, char **argv) {
+  return global_array[argc + 100];  // BOOM
+}
+// RUN: clang -O -g -fsanitize=address %t && ./a.out
+// By default, AddressSanitizer does not try to detect
+// stack-use-after-return bugs.
+// It may still find such bugs occasionally
+// and report them as a hard-to-explain stack-buffer-overflow.
+
+// You need to run the test with ASAN_OPTIONS=detect_stack_use_after_return=1
+
+int *ptr;
+__attribute__((noinline))
+void FunctionThatEscapesLocalObject() {
+  int local[100];
+  ptr = &local[0];
+}
+
+int main5(int argc, char **argv) {
+  FunctionThatEscapesLocalObject();
+  return ptr[argc];
+}
+
+int random_main(int argc, char **argv) {
+std::vector<int> v(2);
+int* p = v.data();
+v.pop_back();
+return v[1];  // Error
+}
+
+int main() {
+#ifndef ONLINE_JUDGE
+  freopen("a.in", "r", stdin);
+  freopen("a.out", "w", stdout);
+#endif
+  cin.sync_with_stdio(0); cin.tie(0);
+
+  // main1(5, nullptr);
+  // main2(5, nullptr);
+  // main3(5, nullptr);
+  // main4(5, nullptr);
+  // main5(5, nullptr);
+  // random_main(5, nullptr);
+
+  return 0;
+}
