@@ -44,14 +44,14 @@ typedef vector<string> VS;
 #define sz(x) (int)(x).size()
 typedef pair<int, int> pii;
 typedef vector<int> vi;
-
+#pragma GCC diagnostic ignored "-Wsign-compare"
 // util functions
 
 
 int main() {
 #ifndef ONLINE_JUDGE
-  freopen("task.in", "r", stdin);    
-  freopen("task.out", "w", stdout); 
+  freopen("task.in", "r", stdin);
+  freopen("task.out", "w", stdout);
 #endif
   cin.sync_with_stdio(0); cin.tie(0);
 
