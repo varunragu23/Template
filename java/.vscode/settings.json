@@ -1,47 +1,46 @@
 {
-    "code-runner.executorMap": {
-        "javascript": "node",
-        "python": "python",
-        "perl": "perl",
-        "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
-        "c": "cd $dir && c++ -g -DDEBUG -std=c++11 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-        "cpp": "cd $dir && c++ -g -DDEBUG -std=c++11 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+  "code-runner.executorMap": {
+    "javascript": "node",
+    "python": "python",
+    "perl": "perl",
+    "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+    "c": "cd $dir && g++-10 -g -DDEBUG -std=c++11 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "cpp": "cd $dir && g++-10 -g -DDEBUG -std=c++11 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+  },
+  "io-run.executorMap.darwin": {
+    ".cpp": {
+      "compileCmd": "g++-10 -g -DDEBUG -DONLINE_JUDGE -std=c++11 -Wfatal-errors ${codeFile} -o ${codeFileNoExt}",
+      "runCmd": "${dirCodeFileNoExt} <${inputFile} >${outputFile}",
+      "cleanupCmd-delete": "rm ${codeFileNoExt}",
+      "errorTracer": "lldb"
     },
-    "io-run.executorMap.darwin": {
-        ".cpp": {
-            "compileCmd": "c++ -g -DDEBUG -DONLINE_JUDGE -std=c++11 -Wfatal-errors ${codeFile} -o ${codeFileNoExt}",
-            "runCmd": "${dirCodeFileNoExt} <${inputFile} >${outputFile}",
-            "cleanupCmd-delete": "rm ${codeFileNoExt}",
-            "errorTracer": "lldb"
-          },
-          ".java": {
-            "compileCmd": "javac -encoding UTF-8 ${codeFile}",
-            "runCmd": "java ${codeFileNoExt} <${inputFile} >${outputFile}",
-            "cleanupCmd": "rm ${codeFileNoExt.class}"
-          },
-          ".py": {
-            "runCmd": "python ${codeFile} <${inputFile} >${outputFile}"
-          }
+    ".java": {
+      "compileCmd": "javac -encoding UTF-8 ${codeFile}",
+      "runCmd": "java ${codeFileNoExt} <${inputFile} >${outputFile}",
+      "cleanupCmd": "rm ${codeFileNoExt.class}"
     },
-    "files.associations": {
-        "iostream": "cpp"
-    },
-    "C_Cpp.clang_format_style": "Google",
-    "files.autoSave": "afterDelay",
-    "code-runner.clearPreviousOutput": true,
-
-    "workbench.iconTheme": "vscode-icons",
-    "C_Cpp.updateChannel": "Insiders",
-    "explorer.confirmDelete": false,
-    "workbench.startupEditor": "newUntitledFile",
-    "vsicons.dontShowNewVersionMessage": true,
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "io-run.continueOnFails": true,
-    "io-run.diffIgnoreSpaces": true,
-    "io-run.enableAnalytic": false,
-    "io-run.showErrorOutputOnFails": true,
-    "io-run.showDiffInOutputPanel": true,
-    "io-run.cleanupAfterRun": false,
-    "io-run.timeLimit": 4
+    ".py": {
+      "runCmd": "python ${codeFile} <${inputFile} >${outputFile}"
+    }
+  },
+  "files.associations": {
+    "iostream": "cpp"
+  },
+  "C_Cpp.clang_format_style": "Google",
+  "files.autoSave": "afterDelay",
+  "code-runner.clearPreviousOutput": true,
+  "workbench.iconTheme": "vscode-icons",
+  "C_Cpp.updateChannel": "Insiders",
+  "explorer.confirmDelete": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "vsicons.dontShowNewVersionMessage": true,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "io-run.continueOnFails": true,
+  "io-run.diffIgnoreSpaces": true,
+  "io-run.enableAnalytic": false,
+  "io-run.showErrorOutputOnFails": true,
+  "io-run.showDiffInOutputPanel": true,
+  "io-run.cleanupAfterRun": false,
+  "io-run.timeLimit": 4
 }

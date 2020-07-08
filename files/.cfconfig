@@ -7,7 +7,7 @@
       "suffix": [
         "cpp"
       ],
-      "before_script": "g++-9 -g -DDEBUG -DONLINE_JUDGE -Wall -Wextra -Wpedantic -Wconversion $%full%$ -o a",
+      "before_script": "g++-10 -g -DDEBUG -DONLINE_JUDGE -Wall -Wextra -Wpedantic -Wconversion $%full%$ -o a",
       "script": "./a",
       "after_script": "rm ./a"
     }
