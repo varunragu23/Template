@@ -1,7 +1,7 @@
 -Wall -Wextra -pedantic -std=c++11 -O2 -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 -fsanitize=address -fsanitize=undefined -fno-sanitize-recover -fstack-protector
 
-        "c": "cd $dir && g++-9 -g -DDEBUG -Wall -Wextra -Wpedantic -Wconversion -std=c++11 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-        "cpp": "cd $dir && g++-9 -g -DDEBUG -Wall -Wextra -Wpedantic -Wconversion -std=c++11 -Wshadow -Wformat=2 -Wfloat-equal -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -D_FORTIFY_SOURCE=2 -fsanitize=address -fsanitize=undefined -fno-sanitize-recover -fstack-protector $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "c": "cd $dir && g++-10 -g -DDEBUG -Wall -Wextra -Wpedantic -Wconversion -std=c++11 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "cpp": "cd $dir && g++-10 -g -DDEBUG -Wall -Wextra -Wpedantic -Wconversion -std=c++11 -Wshadow -Wformat=2 -Wfloat-equal -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -D_FORTIFY_SOURCE=2 -fsanitize=address -fsanitize=undefined -fno-sanitize-recover -fstack-protector $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt"
 
 codesign --entitlements gdb.xml -fs gdb-cert /usr/local/bin/gdb
