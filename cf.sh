@@ -22,6 +22,9 @@ prepareProblem() {
   if [ -f "${PROJECT_NAME}/a.cpp" ]; then
     sed -i '' "s/task/${PROJECT_NAME}/g" "$PROJECT_NAME/a.cpp"
   fi
+  if [ -f "${PROJECT_NAME}/a.py" ]; then
+    sed -i '' "s/task/${PROJECT_NAME}/g" "$PROJECT_NAME/a.py"
+  fi
   if [ -f "${PROJECT_NAME}/b.cpp" ]; then
     sed -i '' "s/task/${PROJECT_NAME}/g" "$PROJECT_NAME/b.cpp"
   fi
