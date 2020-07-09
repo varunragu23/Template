@@ -7,7 +7,8 @@
 #include <ext/pb_ds/tree_policy.hpp>
 using namespace __gnu_pbds; 
   
-using ordered_set = tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>;
+using ordered_set_less = tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>;
+using ordered_set_equal = tree<int, null_type, less_equal<int>, rb_tree_tag, tree_order_statistics_node_update>;
 using ordered_map = tree<int, int, less<int>, rb_tree_tag, tree_order_statistics_node_update>;
 const int RANDOM = chrono::high_resolution_clock::now().time_since_epoch().count();
 struct chash {
