@@ -5,3 +5,11 @@
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt"
 
 codesign --entitlements gdb.xml -fs gdb-cert /usr/local/bin/gdb
+
+
+git config --global diff.tool diffmerge
+git config --global difftool.diffmerge.cmd 'diffmerge "$LOCAL" "$REMOTE"'
+git config --global merge.tool diffmerge
+git config --global mergetool.diffmerge.cmd 'diffmerge --merge --result="$MERGED" "$LOCAL" "$(if test -f "$BASE"; then echo "$BASE"; else echo "$LOCAL"; fi)" "$REMOTE"'
+git config --global mergetool.diffmerge.trustExitCode true
+git config --global mergetool.keepBackup false

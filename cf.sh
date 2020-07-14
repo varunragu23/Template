@@ -43,9 +43,7 @@ prepareProblem() {
   #git add .
   #git commit -a -m "v0" -q
   cd ..
-
 }
-
 
 mkdir -p cf/contest
 
