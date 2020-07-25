@@ -42,7 +42,7 @@
   "io-run.showErrorOutputOnFails": true,
   "io-run.showDiffInOutputPanel": true,
   "io-run.cleanupAfterRun": false,
-  "io-run.timeLimit": 4,
+  "io-run.timeLimit": 0,
   "diffEditor.renderSideBySide": false,
   "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": true
