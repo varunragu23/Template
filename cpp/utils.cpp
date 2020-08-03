@@ -1,12 +1,20 @@
+/* USACO codes
+Key:
+* = Correct
+x = Wrong Answer (including possibly empty or missing output file)
+t = Timeout
+c = Didn't Compile
+! = Run-time error or exceeded memory limits
+*/
 #undef _GLIBCXX_DEBUG
 #pragma GCC optimize("Ofast,unroll-loops,no-stack-protector,fast-math")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,tune=native")
 //#pragma comment(linker, "/STACK:200000000")
 
-#include <ext/pb_ds/assoc_container.hpp> 
+#include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
-using namespace __gnu_pbds; 
-  
+using namespace __gnu_pbds;
+
 using ordered_set_less = tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>;
 using ordered_set_equal = tree<int, null_type, less_equal<int>, rb_tree_tag, tree_order_statistics_node_update>;
 using ordered_map = tree<int, int, less<int>, rb_tree_tag, tree_order_statistics_node_update>;
