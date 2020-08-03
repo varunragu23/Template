@@ -10,6 +10,9 @@ c = Didn't Compile
 #pragma GCC optimize("Ofast,unroll-loops,no-stack-protector,fast-math")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,tune=native")
 //#pragma comment(linker, "/STACK:200000000")
+//
+// ulimit -s 65000
+// g++ option: -Wl,-stack_size -Wl,1000000
 
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
