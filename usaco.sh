@@ -32,7 +32,7 @@ rm -rf ./$PROJECT_NAME
 cp -Rf $HOME/SNIPPETS/Template/$LANG ./$PROJECT_NAME
 mv ./$PROJECT_NAME/task.in ./$PROJECT_NAME/${PROJECT_NAME}.in
 case "$OSTYPE" in
-	darwin*)  
+	darwin*)
 
 if [ -f "${PROJECT_NAME}/a.cpp" ]; then
   sed -i '' "s/task/${PROJECT_NAME}/g" "$PROJECT_NAME/a.cpp"
@@ -47,7 +47,7 @@ if [ -f "${PROJECT_NAME}/a.java" ]; then
   sed -i '' "s/task/${PROJECT_NAME}/g" "$PROJECT_NAME/a.java"
 fi
 ;;
-	linux*)  
+	linux*)
 if [ -f "${PROJECT_NAME}/a.cpp" ]; then
   sed -i "s/task/${PROJECT_NAME}/g" "$PROJECT_NAME/a.cpp"
 fi
@@ -73,7 +73,7 @@ fi
 cd $PROJECT_NAME
 mkdir lib
 cp $HOME/SNIPPETS/Template/files/debug.h lib/
-mv b.cpp utils.cpp lib/
+mv b.cpp utils.cpp a.py lib/
 if [[ ! -z "$GIT" ]]; then
 	git init
 	git add .
