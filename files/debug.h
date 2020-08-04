@@ -129,4 +129,21 @@ void debug_out(Head H, Tail... T) {
   debug_out(T...);
 }
 
+template <typename Head>
+void debug_arr(Head H, int size) {
+  bool first = true;
+  string res = "{";
+  for (int i = 0; i < size; i++) {
+    if (!first) {
+      res += ", ";
+    }
+    first = false;
+    res += to_string(H[i]);
+  }
+  res += "}";
+  cerr << res << endl;
+}
+
+
+
 
