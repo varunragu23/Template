@@ -232,6 +232,9 @@ int main() {
 	cout << x << " " << F.reduce(x) << "\n"; // 10000000073 3
 }
 
+array<int, 3> b = {3, 4, 7};
+debug_arr(a, 3);
+
 // util functions
 
 // heap-use-after-free

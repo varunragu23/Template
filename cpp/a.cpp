@@ -10,6 +10,8 @@ using namespace std;
 #ifdef DEBUG
 #include "lib/debug.h"
 #define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
+#define debug_arr(...) \
+  cerr << "[" << #__VA_ARGS__ << "]:", debug_arr(__VA_ARGS__)
 #pragma GCC diagnostic ignored "-Wsign-compare"
 //#pragma GCC diagnostic ignored "-Wunused-parameter"
 //#pragma GCC diagnostic ignored "-Wunused-variable"
