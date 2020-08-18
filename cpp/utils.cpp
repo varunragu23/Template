@@ -6,6 +6,16 @@ t = Timeout
 c = Didn't Compile
 ! = Run-time error or exceeded memory limits
 */
+// Brute Force Method
+// Run this on directory where a.cpp is there
+cp ~/SNIPPETS/Template/testing .
+// gen.cpp and build with IORun
+// create brute.cpp and build with IORun
+// this runs 5 random tests against a with checkts against brute
+./test.sh 5 a
+// any failed tests will be saved under data/failed*{inp,out,oac} pattern.   .oac is output of brute, .out is output of program, .inp is output of gen
+
+
 #undef _GLIBCXX_DEBUG
 #pragma GCC optimize("Ofast,unroll-loops,no-stack-protector,fast-math")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,tune=native")
