@@ -8,7 +8,7 @@ c = Didn't Compile
 */
 // Brute Force Method
 // Run this on directory where a.cpp is there
-cp ~/SNIPPETS/Template/testing .
+cp ~/SNIPPETS/Template/testing/* .
 // gen.cpp and build with IORun
 // create brute.cpp and build with IORun
 // this runs 5 random tests against a with checkts against brute
