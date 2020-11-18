@@ -42,8 +42,12 @@ mt19937 rng((unsigned int) chrono::steady_clock::now().time_since_epoch().count(
 struct timeit {
 	decltype(chrono::high_resolution_clock::now()) begin;
 	const string _label;
-	timeit(string label = "???") : _label(label) { begin = chrono::high_resolution_clock::now(); }
+	timeit(string label = "???") : _label(label) { start(label); }
+	void start(string label = "???") { _label = label; begin = chrono::high_resolution_clock::now(); }
 	~timeit() {
+    stop();
+  }
+	void stop() {
 		auto end = chrono::high_resolution_clock::now();
 		auto duration = chrono::duration_cast<chrono::milliseconds>(end - begin).count();
 		ostringstream dur;
