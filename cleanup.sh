@@ -1,6 +1,7 @@
 find . -type f -name 'a.out' -delete
 find . -type f -name 'cpp.code-snippets' -delete
 find . -type f -name 'utils.cpp' -delete
+find . -type f -name 'mem.out' -delete
 find . -type f -name 'a' -delete
 find . -type f -name 'b' -delete
 find . -type f -name 'gen' -delete
