@@ -1,5 +1,6 @@
 // generating a random sequence of distinct elements
 #include <bits/stdc++.h>
+#include <sys/time.h>
 using namespace std;
 
 int rand(int a, int b) {
@@ -8,7 +9,11 @@ int rand(int a, int b) {
 
 int main(int argc, char* argv[]) {
     if (argv[1] != NULL) srand(atoi(argv[1])); // atoi(s) converts an array of chars to int
-    else srand(time(NULL));
+    else {
+      struct timeval time; gettimeofday(&time, NULL);
+      // microsecond has 1 000 000
+      srand((time.tv_sec * 1000) + (time.tv_usec / 1000));
+    }
     int n = rand(2, 10);
     printf("%d\n", n);
     set<int> used;

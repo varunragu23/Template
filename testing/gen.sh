@@ -24,7 +24,7 @@ echo "Running brute to generate tests in [$fileName] files "
 for((i = 1; i <= $tCount; ++i)); do
     name=`printf "%02d" $i`
     echo "==== test $fName.$name ===="
-    gtime -f "$fileName.$name gen %e sec, %M KB" ./gen $i > data/$fName.$name.inp
+    gtime -f "$fileName.$name gen %e sec, %M KB" ./gen > data/$fName.$name.inp
     echo "$fileName.$name data `head -1 data/$fName.$name.inp` "
     #gtime -f "$fileName.$name brute %e sec, %M KB" ./brute < data/$fName.$name.inp > data/$fName.$name.oac &
 done

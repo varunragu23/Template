@@ -33,7 +33,7 @@ for((i = 1; i <= $tCount; ++i)); do
     name=`printf "%02d" $i`
     echo "==== test $name ===="
     for((j = 1; j <= $parallelCount; ++j)); do
-        gtime -f "$i.$j gen %e sec, %M KB" ./gen $i$j > data/inp$j
+        gtime -f "$i.$j gen %e sec, %M KB" ./gen > data/inp$j
         echo "$i.$j `head -1 data/inp$j`"
         gtime -f "$i.$j brute %e sec, %M KB" ./brute < data/inp$j > data/oac$j &
         sleep 0.1
