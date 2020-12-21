@@ -20,10 +20,23 @@ then
 fi
 mkdir -p data
 fName=$fileName
+echo "Running brute to generate tests in [$fileName] files "
 for((i = 1; i <= $tCount; ++i)); do
     name=`printf "%02d" $i`
     echo "==== test $fName.$name ===="
-    gtime -f "gen %e sec, %M KB" ./gen $i > data/$fName.$name.inp
-    head -1 data/$fName.$name.inp
-    gtime -f "brute %e sec, %M KB" ./brute < data/$fName.$name.inp > data/$fName.$name.oac
+    gtime -f "$fileName.$name gen %e sec, %M KB" ./gen $i > data/$fName.$name.inp
+    echo "$fileName.$name data `head -1 data/$fName.$name.inp` "
+    #gtime -f "$fileName.$name brute %e sec, %M KB" ./brute < data/$fName.$name.inp > data/$fName.$name.oac &
 done
+for((i = 1; i <= $tCount; ++i)); do
+    name=`printf "%02d" $i`
+    gtime -f "$fileName.$name brute %e sec, %M KB" ./brute < data/$fName.$name.inp > data/$fName.$name.oac &
+    sleep 0.1
+    if (( i % 8 == 0 )); then
+        echo "spawned. waiting for completion"
+        wait
+    fi
+done
+echo "spawned. waiting for completion"
+wait
+echo "completed"
