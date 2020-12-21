@@ -8,6 +8,7 @@ int rand(int a, int b) {
 
 int main(int argc, char* argv[]) {
     if (argv[1] != NULL) srand(atoi(argv[1])); // atoi(s) converts an array of chars to int
+    else srand(time(NULL));
     int n = rand(2, 10);
     printf("%d\n", n);
     set<int> used;
@@ -21,4 +22,4 @@ int main(int argc, char* argv[]) {
     }
     puts("");
 }
-    
+
