@@ -20,25 +20,35 @@ then
 	progName=a
 fi
 rm -rf data/failed.*
+rm -rf data/inp*
+rm -rf data/oac*
+rm -rf data/out*
 failed=0
 for((i = 1; i <= $tCount; ++i)); do
     name=`printf "%02d" $i`
     echo "==== test $name ===="
-    gtime -f "gen %e sec, %M KB" ./gen $i > data/inp
-    head -1 data/inp
-    gtime -f "brute %e sec, %M KB" ./brute < data/inp > data/oac
-    gtime -f "$progName %e sec, %M KB" ./$progName < data/inp > data/out
-    diff -w data/out data/oac 
-    if [ "$?" != "0" ]
-    then
-        ((failed = failed + 1))
-        cp data/inp data/failed.$i.inp
-        cp data/oac data/failed.$i.oac
-        cp data/out data/failed.$i.out
-    fi
+    for((j = 1; j <= 8; ++j)); do
+        gtime -f "$i.$j gen %e sec, %M KB" ./gen $i$j > data/inp$j
+        echo "$i.$j `head -1 data/inp$j`"
+        gtime -f "$i.$j brute %e sec, %M KB" ./brute < data/inp$j > data/oac$j &
+    done
+    echo "spawned brute. waiting for completion"
+    wait
+    for((j = 1; j <= 8; ++j)); do
+        gtime -f "$i.$j $progName %e sec, %M KB" ./$progName < data/inp$j > data/out$j
+        diff -w data/out$j data/oac$j 
+        if [ "$?" != "0" ]
+        then
+            ((failed = failed + 1))
+            cp data/inp$j data/failed.$i.inp$j
+            cp data/oac$j data/failed.$i.oac$j
+            cp data/out$j data/failed.$i.out$j
+        fi
+    done
 done
 if [ "$failed" != "0" ]
 then
     echo "Failed $failed Tests"
     exit 1
 fi
+exit 0
