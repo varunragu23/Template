@@ -42,10 +42,11 @@ for((i = 1; i <= $tCount; ++i)); do
     wait
     for((j = 1; j <= $parallelCount; ++j)); do
         gtime -f "$i.$j $progName %e sec, %M KB" ./$progName < data/inp$j > data/out$j
-        diff -w data/out$j data/oac$j 
+        diff -w data/out$j data/oac$j
         if [ "$?" != "0" ]
         then
             ((failed = failed + 1))
+            say failed $i.$j
             cp data/inp$j data/failed.$i.inp$j
             cp data/oac$j data/failed.$i.oac$j
             cp data/out$j data/failed.$i.out$j

@@ -33,7 +33,7 @@ for((i = 1; ; ++i)); do
     name=`printf "%02d" $i`
     if [[ ! -f "data/$fName.$name.inp" ]] ; then
 	exit 0
-    fi 
+    fi
     echo "==== test $fName.$name ===="
     head -1 data/$fName.$name.inp
     gtime -f "$progName %e sec, %M KB" ./$progName < data/$fName.$name.inp > data/$fName.$name.out
@@ -41,6 +41,7 @@ for((i = 1; ; ++i)); do
     if [ "$?" != "0" ]
     then
         ((failed = failed + 1))
+        say failed $i.$j
         cp data/$fName.$name.inp data/failed.$i.inp
         cp data/$fName.$name.oac data/failed.$i.oac
         cp data/$fName.$name.out data/failed.$i.out
