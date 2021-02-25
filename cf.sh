@@ -7,6 +7,12 @@ LANG=cpp
 CONTEST=$1
 PROBLEM=$2
 
+if [ -z "$CONTEST" ]
+then
+    echo $USAGE
+    return
+fi
+
 prepareProblem() {
   PROJECT_NAME=$TASK
   # --- Body --------------------------------------------------------
