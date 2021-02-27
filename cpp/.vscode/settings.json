@@ -48,8 +48,7 @@
   },
   "git.enableSmartCommit": true,
   "C_Cpp.clang_format_style": "Google",
-  "C_Cpp.updateChannel": "Insiders",
-  "C_Cpp.intelliSenseCachePath": "~/.vscode",
+  "C_Cpp.intelliSenseCachePath": "/Users/ragunathd/.vscode",
   "C_Cpp.intelliSenseCacheSize": 512,
   "terminal.integrated.fontFamily": "Source Code Pro for Powerline"
 }
