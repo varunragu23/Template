@@ -3,13 +3,13 @@
     "javascript": "node",
     "python": "python",
     "perl": "perl",
-    "c": "cd $dir && g++-10 -g -DDEBUG -Wall -Wextra -Wpedantic -Wconversion -std=c++11 $fileName -o $fileNameWithoutExt && gtime $dir$fileNameWithoutExt",
-    "cpp": "cd $dir && export ASAN_OPTIONS=strict_string_checks=1:detect_stack_use_after_return=1:check_initialization_order=1:strict_init_order=1; g++-10 -g -DDEBUG -Wall -Wextra -Wpedantic -Wconversion -std=c++11 -Wshadow -Wformat=2 -Wfloat-equal -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -D_GLIBCXX_SANITIZE_VECTOR -D_FORTIFY_SOURCE=2 -fsanitize=address -fsanitize=undefined -fno-sanitize-recover -fstack-protector $fileName -o $fileNameWithoutExt && gtime -f '%e sec, %M KB'  $dir$fileNameWithoutExt",
+    "c": "cd $dir && g++-10 -g -DDEBUG -Wall -Wextra -Wpedantic -Wconversion -std=c++17 $fileName -o $fileNameWithoutExt && gtime $dir$fileNameWithoutExt",
+    "cpp": "cd $dir && export ASAN_OPTIONS=strict_string_checks=1:detect_stack_use_after_return=1:check_initialization_order=1:strict_init_order=1; g++-10 -g -DDEBUG -Wall -Wextra -Wpedantic -Wconversion -std=c++17 -Wshadow -Wformat=2 -Wfloat-equal -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -D_GLIBCXX_SANITIZE_VECTOR -D_FORTIFY_SOURCE=2 -fsanitize=address -fsanitize=undefined -fno-sanitize-recover -fstack-protector $fileName -o $fileNameWithoutExt && gtime -f '%e sec, %M KB'  $dir$fileNameWithoutExt",
     "java": "cd $dir && javac $fileName && java $fileNameWithoutExt"
   },
   "io-run.executorMap.darwin": {
     ".cpp": {
-      "compileCmd": "g++-10 -g -O2 -DDEBUG -DONLINE_JUDGE -Wall -Wextra -Wpedantic -Wconversion -std=c++11 -Wfatal-errors ${codeFile} -o ${codeFileNoExt} && rm -rf mem.out",
+      "compileCmd": "g++-10 -g -O2 -DDEBUG -DONLINE_JUDGE -Wall -Wextra -Wpedantic -Wconversion -std=c++17 -Wfatal-errors ${codeFile} -o ${codeFileNoExt} && rm -rf mem.out",
       "compileCmd_biggerstack": "g++-10 -g -O2 -DDEBUG -DONLINE_JUDGE -Wall -Wextra -Wpedantic -Wconversion -std=c++17 -Wl,-stack_size -Wl,0x1000000000 -Wfatal-errors ${codeFile} -o ${codeFileNoExt} && rm -rf mem.out",
       "runCmd": "gtime -f '%e sec, %M KB'  ${dirCodeFileNoExt} <${inputFile} >${outputFile} 2>> mem.out",
       "cleanupCmd-delete": "rm ${codeFileNoExt}",

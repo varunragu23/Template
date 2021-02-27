@@ -4,7 +4,7 @@
         {
             "label": "build",
             "type": "shell",
-	    "command": "g++-10 -g -DDEBUG -std=c++11 ${file} -o ${fileBasenameNoExtension}",
+	    "command": "g++-10 -g -DDEBUG -std=c++17 ${file} -o ${fileBasenameNoExtension}",
             "group": {
                 "kind": "build",
                 "isDefault": true
