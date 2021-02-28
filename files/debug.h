@@ -69,13 +69,13 @@ string to_string(bool b) {
 string to_string(char b) { return (string(1, b)); }
 
 string to_string(vector<bool> v) {
-  bool first = true;
+  bool fst = true;
   string res = "{";
   for (int i = 0; i < static_cast<int>(v.size()); i++) {
-    if (!first) {
+    if (!fst) {
       res += ", ";
     }
-    first = false;
+    fst = false;
     res += to_string(v[i]);
   }
   res += "}";
@@ -93,13 +93,13 @@ string to_string(bitset<N> v) {
 
 template <typename A>
 string to_string(A v) {
-  bool first = true;
+  bool fst = true;
   string res = "{";
   for (const auto &x : v) {
-    if (!first) {
+    if (!fst) {
       res += ", ";
     }
-    first = false;
+    fst = false;
     res += to_string(x);
   }
   res += "}";
@@ -131,13 +131,13 @@ void debug_out(Head H, Tail... T) {
 
 template <typename Head>
 void debug_arr(Head H, int size) {
-  bool first = true;
+  bool fst = true;
   string res = "{";
   for (int i = 0; i < size; i++) {
-    if (!first) {
+    if (!fst) {
       res += ", ";
     }
-    first = false;
+    fst = false;
     res += to_string(H[i]);
   }
   res += "}";
