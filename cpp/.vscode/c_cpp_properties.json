@@ -1,35 +1,27 @@
 {
     "configurations": [
         {
-            "name": "Win32",
-            "includePath": [
-                "C:/MinGW/lib/**",
-                "C:/MinGW/lib/gcc/mingw32/8.2.0/include/c++/mingw32/**",
-                "${workspaceFolder}/**"
-            ],
-            "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE"
-            ],
-            "compilerPath": "/usr/bin/gcc",
-            "cStandard": "c11",
-            "cppStandard": "c++17",
-            "intelliSenseMode": "clang-x64"
-        },
-        {
             "name": "Mac",
             "includePath": [
-                "/Library/Developer/CommandLineTools/usr/lib/clang/**",
                 "/usr/local/include/**",
                 "${workspaceFolder}/**"
             ],
             "defines": [],
             "macFrameworkPath": [
-                "/System/Library/Frameworks",
-                "/Library/Frameworks"
             ],
-            "compilerPath": "/usr/local/bin/g++-10",
+            "compilerPath": "g++-10",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64"
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "/usr/local/include/**",
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "compilerPath": "g++-10",
             "cStandard": "c11",
             "cppStandard": "c++17",
             "intelliSenseMode": "gcc-x64"
@@ -37,3 +29,4 @@
     ],
     "version": 4
 }
+
